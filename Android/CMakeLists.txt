@@ -4,7 +4,7 @@ include(ExternalProject)
 
 externalproject_add(lua_native
 	SOURCE_DIR ../lib/lua
-	CMAKE_GENERATOR "Visual Studio 14 2015"
+	CMAKE_GENERATOR ${CMAKE_GENERATOR}
 	CMAKE_ARGS -DANDROID_CROSSCOMPILE=TRUE
 	BUILD_COMMAND
 		${CMAKE_COMMAND} --build <BINARY_DIR> --config Release
@@ -12,7 +12,7 @@ externalproject_add(lua_native
 )
 externalproject_add(tolua_native
 	SOURCE_DIR ../lib/tolua++
-	CMAKE_GENERATOR "Visual Studio 14 2015"
+	CMAKE_GENERATOR ${CMAKE_GENERATOR}
 	BUILD_COMMAND
 		${CMAKE_COMMAND} --build <BINARY_DIR> --config Release
 	INSTALL_COMMAND ""
